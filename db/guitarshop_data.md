@@ -6,14 +6,15 @@ guitarshop_data
 3. made_in
 4. price
 5. manufacturer_name
-6. body_shape, body_material
-7. bridge_type
-8. number_of_fret
-9. fretboard_material
-10. neck_shape
-11. neck_material
-12. pickup_configuration
+6. body_shape
+7. body_material
+8. bridge_type
+9. number_of_fret
+10. fretboard_material
+11. neck_shape
+12. neck_material
+13. pickup_configuration (S/S, S/S/S, S/S/H, H/H, H/S/H)
 
 ---------------
 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12
-
+"hh",
