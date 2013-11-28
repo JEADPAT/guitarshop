@@ -1,7 +1,6 @@
 guitarshop_data
 ===============
 
----------------
 1. model_name
 2. number_of_string
 3. made_in
