@@ -11,7 +11,7 @@ guitarshop_data
 8. bridge_type (Vintage tremolo,Fixed tremolo,Floyd Rose)
 9. number_of_fret(21,22,24)
 10. fretboard_material(Rosewood,Maple,Ebony,BirdEye,Brazilian Rosewood,Mahogany)
-11. neck_shape
+11. neck_shape(D,C,Soft V,Hard V,O)
 12. neck_material(Maple,Birdeye Maple,Mahogany,Ebony)
 13. pickup_configuration (S/S, S/S/S, S/S/H, H/H, H/S/H)
 
