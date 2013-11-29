@@ -23,7 +23,7 @@ guitarshop_data
 |Standard Stratocaster |6 |USA |30000 |Fender |PRS |Mahogany |Floyd Rose|22 |Rosewood |Hard V|Maple|H/H |
 |Standard Strat |6 |Korea |80900 |Fender |PRS |Mahogany|Fixed Tremolo|24|Rosewood|O|Maple|S/S | 
 |Les Paul Signature T|6 |USA |16000 |Gibson |Telecaster |Basswood |Vintage Tremolo |22 |Rosewood |D |Maple |S/S/H| 
-|Les Paul Standard Gary Moore Tribute Lemon Burst|6|USA  |54000 |Gibson |Stratocater |Mahogany |Vintage tremolo |24 |Brazilian Rosewood |D |Ebony |H/S/H | 
+|Les Paul Standard Gary Moore Tribute Lemon Burst|6|USA  |54000 |Gibson |Stratocater |Mahogany |Vintage Tremolo |24 |Brazilian Rosewood |D |Ebony |H/S/H | 
 |Les Paul Zoot Suit Rainbow |6 |Japan  |45000 |Gibson |PRS |Basswood |Floyd Rose |22 |Maple |Hard V |Ebony |S/S/S | 
 |LPJ |6 |USA  |90800 |Gibson |telecaster |Maple |Vintage Tremolo |24 |Mahogany |C |Mahogany |S/S | 
 |BBM1 Ben Bruce Asking Alexandria Signature |6|China |17000 |Ibanez |S |Mahogany |Vintage tremolo |24 |Ebony |D |Ebony |S/S/H | 
@@ -41,6 +41,6 @@ guitarshop_data
 |SGR Series S-1 |6 |Mexico |50000 |Schecter |Telecaster |Maple |Vintage Tremolo |22 |Brazilian |C |Maple |S/S/S |
 |SGR Series C-1 |6 |USA |21000 |Schecter |Stratocater |Maple |Fixed Rremolo |21 |Ebony |Soft V |Mahogany |H/H |
 |SGR Series 006 |6 |China |78000 |Schecter |Stratocaster |Maple |Vintage Tremolo |21 |Rosewood |C |Maple |S/S/S |
-|Damien Platinum 6 FR |6 |China |23000 |Schecter |PRS |Basswood |Fixed tremolo |21 |Maple   |Soft V |Ebony |H/H |
+|Damien Platinum 6 FR |6 |China |23000 |Schecter |PRS |Basswood |Fixed Tremolo |21 |Maple   |Soft V |Ebony |H/H |
 
 
