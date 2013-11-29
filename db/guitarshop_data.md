@@ -42,5 +42,8 @@ guitarshop_data
 |SGR Series C-1 |6 |USA |21000 |Schecter |Stratocater |Maple |Fixed Rremolo |21 |Ebony |Soft V |Mahogany |H/H |
 |SGR Series 006 |6 |China |78000 |Schecter |Stratocaster |Maple |Vintage Tremolo |21 |Rosewood |C |Maple |S/S/S |
 |Damien Platinum 6 FR |6 |China |23000 |Schecter |PRS |Basswood |Fixed Tremolo |21 |Maple   |Soft V |Ebony |H/H |
+|GRG7221BK |7 |Indonesia |9350 |Ibanez |RG |basswood |Fixed Tremolo |24 |Maple |V |Rosewood |H/H |
+|JP70 |7 |Indonesia |24300 |MusicMan |JP |basswood |Fixed tremolo |24 |Maple |Soft V |Rosewood |H/H |
+|SGR-1C |7 |Indonesia |7600 |Schecter |Schecter |basswood |Fixed tremplo |24 |Maple |U |Rosewood |H/H |
 
 
