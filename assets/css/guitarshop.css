@@ -1,9 +1,41 @@
 
+	body {
+		padding-top: 100px;
+		height: auto;
+	}
+
 	#custom-navbar {
-		background-color: #8E44AD;
+		background-color: #2ECC71;
 	}
 
-	#ul-custom > li > a {
-		color: white;
+	.custom-panel {
+		/*color: #3a87ad;*/
+		border-color: #E74C3C;
 	}
 
+	.custom-panel > .panel-heading {
+		color: #ffffff;
+		background-color: #E74C3C;
+		border-color: #E74C3C;
+	}
+
+	.custom-list {
+		background-color: #F1C40F;
+		padding-top: 20px;
+		padding-bottom: 20px;
+		border-radius: 5px;
+		list-style: none;
+		line-height: 30px;
+	}
+
+	.custom-list > li > a {
+		color: #ffffff;
+	}
+
+	.custom-sublist > li {
+		margin-left: -40px;
+	}
+
+	.custom-sublist > li > label {
+		color: #ffffff;
+	}
