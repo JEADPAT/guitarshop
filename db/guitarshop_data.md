@@ -6,7 +6,7 @@ guitarshop_data
 3. made_in(Mexico,Japan,USA,China,Korea,Indonesia)
 4. price
 5. manufacturer_name
-6. body_shape(Stratocaster,PRS,telecaster,S(ibanez only),RG(ibanez only))
+6. body_shape(Stratocaster,PRS,telecaster,S(ibanez only),RG(ibanez only),Schecter)
 7. body_material(Maple,Mahogany,Basswood)
 8. bridge_type (Vintage tremolo,Fixed tremolo,Floyd Rose)
 9. number_of_fret(21,22,24)
@@ -44,6 +44,6 @@ guitarshop_data
 |Damien Platinum 6 FR |6 |China |23000 |Schecter |PRS |Basswood |Fixed Tremolo |21 |Maple   |Soft V |Ebony |H/H |
 |GRG7221BK |7 |Indonesia |9350 |Ibanez |RG |basswood |Fixed Tremolo |24 |Maple |V |Rosewood |H/H |
 |JP70 |7 |Indonesia |24300 |MusicMan |JP |basswood |Fixed tremolo |24 |Maple |Soft V |Rosewood |H/H |
-|SGR-1C |7 |Indonesia |7600 |Schecter |Schecter |basswood |Fixed tremplo |24 |Maple |U |Rosewood |H/H |
+|SGR-1C |7 |Indonesia |7600 |Schecter |Schecter |basswood |Fixed tremplo |24 |Maple |D |Rosewood |H/H |
 
 
