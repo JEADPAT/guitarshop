@@ -16,7 +16,7 @@ guitarshop_data
 13. pickup_configuration (S/S, S/S/S, S/S/H, H/H, H/S/H)
 
 ---------------
-|1|2|3|4|6|7|8|9|10|11|12|13| 
+|1|2|3|4|5|6|7|8|9|10|11|12|13| 
 |---- |:---:| :-----:|:----:|:----:| :-----:|:----:|:-----:| :-----:|:----:|:---:| :-----:|-----:|
 |Standard Stratocaster |6 |Mexico |18900 |Fender |Stratocaster |Maple |Vintage Tremolo |21 |Rosewood |C |Maple |S/S/S |
 |Standard Telecaster |6 |Japan |20400 |Fender |Telecaster |Maple |Fixed Tremolo |22 |Ebony   |Soft V |Maple |S/S |
