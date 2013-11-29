@@ -8,7 +8,7 @@ guitarshop_data
 5. manufacturer_name
 6. body_shape
 7. body_material
-8. bridge_type
+8. bridge_type (Vintage tremolo,Fixed tremolo,Floyd Rose)
 9. number_of_fret
 10. fretboard_material
 11. neck_shape
@@ -17,3 +17,4 @@ guitarshop_data
 
 ---------------
 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12
+"Standard Stratocaster","6","Mexico","18900","Fender","Stratocaster","Alder","Vintage Tremolo","21","Rosewood",
