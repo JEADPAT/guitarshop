@@ -27,7 +27,7 @@ guitarshop_data
 |Les Paul Zoot Suit Rainbow |6 |Japan  |45000 |Gibson |PRS |Basswood |Floyd Rose |22 |Maple |Hard V |Ebony |S/S/S | 
 |LPJ |6 |USA  |90800 |Gibson |telecaster |Maple |Vintage Tremolo |24 |Mahogany |C |Mahogany |S/S | 
 |BBM1 Ben Bruce Asking Alexandria Signature |6|China |17000 |Ibanez |S |Mahogany |Vintage tremolo |24 |Ebony |D |Ebony |S/S/H | 
-|GRG7221BK |6 |Mexico |50000 |Ibanez |RG |Maple |Vintage Tremolo |22 |Brazilian |C |Maple |S/S/S |
+|GRG7221BK |6 |Mexico |50000 |Ibanez |RG |Maple |Vintage Tremolo |22 |Brazilian Rosewood |C |Maple |S/S/S |
 |GRG170DX |6 |Japan |45000 |Ibanez |RG |Maple |Floyd Rose |24 |Ebony |Hard V |Maple |S/S |
 |GRG121 SP ( Limited for 2012 ) |6 |USA |120000 |Ibanez |S |Basswood |Vintage Tremolo |22 |Rosewood |D |Maple |S/S/S | 
 |Custom 24 ( 2013 ) Antique White |6 |Japan |78000 |PRS|Stratocaster |Maple |Vintage Tremolo |21 |Rosewood |C |Maple |S/S/S |
