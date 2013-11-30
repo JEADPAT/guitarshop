@@ -74,9 +74,9 @@ class Dao_M extends CI_Model {
 	public function buildBridge() {
 		$bridge = explode("|", $this->input->get("bridges"));
 		$bridgeJoin = "JOIN bridges as bd ON bd.bridge_id = guitars.bridge_id\n";
-		$bridgeWhere = "bridge_name = '" . $bridge[0] . "'";
+		$bridgeWhere = "bridge_type = '" . $bridge[0] . "'";
 		for ($i = 1; $i < sizeof($bridge); $i++) {
-			$bridgeWhere = $bridgeWhere . " OR bridge_name = '" . $bridge[$i] ."'";
+			$bridgeWhere = $bridgeWhere . " OR bridge_type = '" . $bridge[$i] ."'";
 		}
 		return array(
 			'join' => $bridgeJoin,
