@@ -45,7 +45,7 @@
 					print_r($split);
 				?> -->
 				<div class="panel panel-default custom-panel">
-					<div class="panel-heading"><h3>Panel heading without title</h3></div>
+					<div class="panel-heading"><h3>Guitar Models</h3></h3></div>
 					<div class="panel-body" style="margin-left: 20px; margin-right: 20px;">
 						<div class="row" id='guitarBox'>
                            
