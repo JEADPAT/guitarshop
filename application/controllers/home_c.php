@@ -10,13 +10,21 @@ class Home_C extends CI_Controller {
 	public function index() {
 
 		$data = array(
-			'manufacturers' => $this->dao_m->getManufacturerList()
+			'manufacturers' => $this->dao_m->getManufacturerList(),
+			'bridges' => $this->dao_m->getBridgeList(),
+			'pickups' => $this->dao_m->getPickupList()
 		);
 
 		$this->load->view('templates/header');
 		$this->load->view('home_v', $data);
 		$this->load->view('templates/footer');
 
+	}
+
+	public function about() {
+		$this->load->view('templates/header');
+		$this->load->view('about_v');
+		$this->load->view('templates/footer');
 	}
 
 	public function getGuitars() {
