@@ -21,6 +21,13 @@ class Dao_M extends CI_Model {
 		return $result->result_array();
 	}
 
+	/* --------------------------sidebar------------------------------ */
+	public function getAllGuitar() {
+		$query = "SELECT * FROM guitars JOIN manufacturers as mnf ON mnf.manufacturer_id = guitars.manufacturer_id";
+		$result = $this->db->query($query);
+		return $result->result_array();
+	}
+
 	/* ---------------------------query builder------------------------------ */
 	public function callBuilder() {
 
