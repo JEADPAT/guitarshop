@@ -16,7 +16,7 @@
 				var json_object = eval(response);
 				for (var i = 0; i < json_object.length; i++) {
 					var obj = eval(json_object[i]);
-					alert(obj.model_name);
+					alert(obj.manufacturer_name + " " + obj.model_name);
 				};
 				// alert(json_object);
 				// alert(response);
@@ -26,4 +26,16 @@
             }
 		});
 
+	}
+
+	function findGuitar() {
+
+	}
+
+	function convertToString(input) {
+		var output = input[0].value;
+		for (var i = 0; i < input.length; i++) {
+			output += "|" + input[i].value;
+		};
+		return output;
 	}
