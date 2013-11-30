@@ -10,7 +10,9 @@ class Home_C extends CI_Controller {
 	public function index() {
 
 		$data = array(
-			'manufacturers' => $this->dao_m->getManufacturerList()
+			'manufacturers' => $this->dao_m->getManufacturerList(),
+			'bridges' => $this->dao_m->getBridgeList(),
+			'pickups' => $this->dao_m->getPickupList()
 		);
 
 		$this->load->view('templates/header');

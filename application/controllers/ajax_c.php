@@ -8,15 +8,11 @@ class Ajax_C extends CI_Controller {
 	}
 
 	public function findByManufacturers()	{
-		// $manufacturers = $this->input->get("manufacturers");
-		// $manufacturer = explode("|", $manufacturers);
-		// echo json_encode($manufacturer);
-		// echo $this->dao_m->getGuitarByManufacturer();
 		echo json_encode($this->dao_m->getGuitarByManufacturer());
 	}
 
-	public function test() {
-		echo $this->dao_m->callBuilder();
+	public function findGuitars() {
+		echo json_encode($this->dao_m->callBuilder());
 	}
 	
 }

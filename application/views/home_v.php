@@ -15,21 +15,26 @@
 					<li><a href="#" style="margin-left: -10px; font-size: 16px;" onclick="toggle_sublist(1)"><label>Manufacturer</label></a>
 						<ul class="custom-sublist sublist_1" style="list-style: none;">
 							<?php foreach ($manufacturers as $m) { ?>
-								<li><input type="checkbox" name="manufacturer" value="<?php echo $m['manufacturer_name']; ?>" onclick="test()"><label style="color: #ffffff;">&nbsp;&nbsp;<?php echo $m['manufacturer_name']; ?></label></li>
+								<li><input type="checkbox" name="manufacturer" value="<?php echo $m['manufacturer_name']; ?>" onclick="findGuitars()"><label style="color: #ffffff;">&nbsp;&nbsp;<?php echo $m['manufacturer_name']; ?></label></li>
 							<?php } ?>
 						</ul>
 					</li>
 					<li><a href="#" style="margin-left: -10px; font-size: 16px;" onclick="toggle_sublist(2)"><label>Pickup</label></a>
 						<ul class="custom-sublist sublist_2" style="list-style: none;">
-							<li><input type="checkbox" name="pickups" value="S/S" onclick=""><label style="color: #ffffff;">&nbsp;&nbsp;S/S</label></li>
-							<li><input type="checkbox" name="pickups" value="S/S/S" onclick=""><label style="color: #ffffff;">&nbsp;&nbsp;S/S/S</label></li>
-							<li><input type="checkbox" name="pickups" value="S/S/H" onclick=""><label style="color: #ffffff;">&nbsp;&nbsp;S/S/H</label></li>
-							<li><input type="checkbox" name="pickups" value="H/H" onclick=""><label style="color: #ffffff;">&nbsp;&nbsp;H/H</label></li>
-							<li><input type="checkbox" name="pickups" value="H/H" onclick=""><label style="color: #ffffff;">&nbsp;&nbsp;H/S/H</label></li>
+							<?php foreach ($pickups as $p) { ?>
+								<li><input type="checkbox" name="manufacturer" value="<?php echo $p['pickup_configuration']; ?>" onclick="findGuitars()"><label style="color: #ffffff;">&nbsp;&nbsp;<?php echo $p['pickup_configuration']; ?></label></li>
+							<?php } ?>
 						</ul>
 					</li>
-					<li><a href="#" style="margin-left: -10px; font-size: 16px;" onclick="toggle_sublist(3)"><label>Price Range</label></a>
+					<li><a href="#" style="margin-left: -10px; font-size: 16px;" onclick="toggle_sublist(3)"><label>Bridge</label></a>
 						<ul class="custom-sublist sublist_3" style="list-style: none;">
+							<?php foreach ($bridges as $b) { ?>
+								<li><input type="checkbox" name="manufacturer" value="<?php echo $b['bridge_type']; ?>" onclick="findGuitars()"><label style="color: #ffffff;">&nbsp;&nbsp;<?php echo $b['bridge_type']; ?></label></li>
+							<?php } ?>
+						</ul>
+					</li>
+					<li><a href="#" style="margin-left: -10px; font-size: 16px;" onclick="toggle_sublist(4)"><label>Price Range</label></a>
+						<ul class="custom-sublist sublist_4" style="list-style: none;">
 							<li><input type="checkbox" name="pricerange" value="" onclick=""><label>&nbsp;&nbsp;฿ 0 - ฿ 9,999</label></li>
 							<li><input type="checkbox" name="pricerange" value="" onclick=""><label>&nbsp;&nbsp;฿ 10,000 - ฿ 19,999</label></li>
 							<li><input type="checkbox" name="pricerange" value="" onclick=""><label>&nbsp;&nbsp;฿ 20,000 - ฿ 29,999</label></li>
@@ -94,7 +99,7 @@
 		});
 
 		function hide_all_sublist() {
-			for (var i = 1; i <= 3; i++) {
+			for (var i = 1; i <= 4; i++) {
 				$(".sublist_" + i).hide();
 			}
 		}
