@@ -47,8 +47,10 @@
 				<div class="panel panel-default custom-panel">
 					<div class="panel-heading"><h3>Panel heading without title</h3></div>
 					<div class="panel-body" style="margin-left: 20px; margin-right: 20px;">
-						<div class="row">
-							<div class="col-6 col-sm-6 col-lg-4">
+						<div class="row" id='guitarBox'>
+                           
+                            
+							<div class="col-6 col-sm-6 col-lg-4" >
 								<h2>Heading</h2>
 								<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
 								<p><a class="btn btn-default" href="#" role="button">View details »</a></p>
@@ -78,6 +80,9 @@
 								<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
 								<p><a class="btn btn-default" href="#" role="button">View details »</a></p>
 							</div><!--/span-->
+                            
+                            
+                            
 						</div>
 					</div>
 				</div>

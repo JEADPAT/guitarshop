@@ -16,9 +16,23 @@
 			data: "manufacturers=" + ms + "&pickups=" + ps,
 			success: function(response){
 				var json_object = eval(response);
+                
+                document.getElementById("guitarBox").innerHTML = "";
+                
 				for (var i = 0; i < json_object.length; i++) {
 					var obj = eval(json_object[i]);
-					alert(obj.manufacturer_name + " " + obj.model_name);
+//					alert(obj.manufacturer_name + " " + obj.model_name);
+                    
+                    var t1 = document.getElementById("guitarBox");
+                    var d =  document.createElement("div");
+                    d.className = "col-6 col-sm-6 col-lg-4";
+                    
+                    d.innerHTML = "<h2>"+obj.manufacturer_name+"</h2>"+"<h5>"+obj.model_name+"</h5>"+"<img data-src=\""+"holder.js/100%x180\""+" "+"alt="+"\"PICTURE\""+"<br>"+"<p><a class="+"\"btn btn-default\" "+"href="+" \" # \" "+"role="+" \"button \" >"+"View Detail >>"+"</a></p>";
+                    
+//                    d.innerHTML = obj.manufacturer_name + " " + obj.model_name;
+                    
+                    t1.appendChild(d);
+                    
 				};
 				// alert(json_object);
 				// alert(response);
