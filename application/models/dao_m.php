@@ -21,25 +21,13 @@ class Dao_M extends CI_Model {
 		return $result->result_array();
 	}
 
-	/* ---------------------------guitar------------------------------ */
-	public function getGuitarByManufacturer() {
-		$manufacturers = $this->input->get("manufacturers");
-		$manufacturer = explode("|", $manufacturers);
-		$condition = "'" . $manufacturer[0] . "'";
-		for ($i = 1; $i < sizeof($manufacturer) ; $i++) { 
-			$condition = $condition . " OR manufacturer_name = '" . $manufacturer[$i] . "'";
-		}
-		$query = "SELECT * FROM guitars JOIN manufacturers as m ON m.manufacturer_id = guitars.manufacturer_id WHERE manufacturer_name = " . $condition;
-		$result = $this->db->query($query);
-		return $result->result_array();
-	}
-
 	/* ---------------------------query builder------------------------------ */
 	public function callBuilder() {
 
 		$manufacturer = null;
 		$bridge = null;
 		$pickup = null;
+		$price = null;
 
 		if (!$this->input->get("manufacturers") == "") {
 			$manufacturer = $this->buildManufacturer();
@@ -53,7 +41,11 @@ class Dao_M extends CI_Model {
 			$bridge = $this->buildBridge();
 		}
 
-		return $this->masterQuery($manufacturer, $bridge, $pickup);
+		if (!$this->input->get("priceranges") == "") {
+			$price = $this->buildPriceRange();
+		}
+
+		return $this->masterQuery($manufacturer, $bridge, $pickup, $price);
 		// return masterQuery($manufacturer);
 
 	}
@@ -97,30 +89,67 @@ class Dao_M extends CI_Model {
 		);
 	}
 
+	public function buildPriceRange() {
+		$price = explode("|", $this->input->get("priceranges"));
+		$range = explode("-", $price[0]);
+		$priceJoin = "";
+		$priceWhere = "price BETWEEN " . $range[0] . " AND " . $range[1];
+		for ($i = 1; $i < sizeof($price); $i++) {
+			$range = explode("-", $price[$i]);
+			$priceWhere = $priceWhere . " OR price BETWEEN " . $range[0] ." AND " . $range[1];
+		}
+		return array(
+			'join' => $priceJoin,
+			'where' => $priceWhere
+		);
+	}
+
 	/* ---------------------------final query------------------------------ */
-	public function masterQuery($manufactuerer, $bridge, $pickup) {
+	public function masterQuery($manufactuerer, $bridge, $pickup, $price) {
 		$query = "SELECT * FROM guitars ";
-		$join  = "";
+		$join  = "JOIN manufacturers as mnf ON mnf.manufacturer_id = guitars.manufacturer_id\n";
 		$where = "WHERE ";
+		$whereChecker = false;
 
 		if (!empty($manufactuerer)) {
-			$join = $join . $manufactuerer['join'];
+			// $join = $join . $manufactuerer['join'];
 			$where = $where . $manufactuerer['where'];
+			$whereChecker = true;
 		}
 
 		if (!empty($bridge)) {
 			$join = $join . $bridge['join'];
-			$where = $where . " AND " . $bridge['where'];
+			if ($whereChecker)
+				$where = $where . " AND " . $bridge['where'];
+			else
+				$where = $where . $bridge['where'];	
+			$whereChecker = true;
 		}
 
 		if (!empty($pickup)) {
 			$join = $join . $pickup['join'];
-			$where = $where . " AND " . $pickup['where'];
+			if ($whereChecker)
+				$where = $where . " AND " . $pickup['where'];
+			else
+				$where = $where . $pickup['where'];
+			$whereChecker = true;
 		}
 
-		$query = $query . $join . $where;
-		$result = $this->db->query($query);
-		return $result->result_array();
+		if (!empty($price)) {
+			if ($whereChecker)
+				$where = $where . " AND " . $price['where'];
+			else
+				$where = $where . $price['where'];
+			$whereChecker = true;
+		}
+
+		if ($whereChecker) {
+			$query = $query . $join . $where;
+			$result = $this->db->query($query);
+			return $result->result_array();
+		}
+		else
+			return null;
 	}
 
 }

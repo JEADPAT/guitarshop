@@ -21,6 +21,12 @@ class Home_C extends CI_Controller {
 
 	}
 
+	public function about() {
+		$this->load->view('templates/header');
+		$this->load->view('about_v');
+		$this->load->view('templates/footer');
+	}
+
 	public function getGuitars() {
 		$this->output->set_content_type('application/json');
 		return json_encode($this->dao_m->queryGuitar());

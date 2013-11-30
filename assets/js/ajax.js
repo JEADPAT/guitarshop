@@ -34,23 +34,17 @@
 		var ms = convertToString($(".sublist_1 input:checked"));
 		var ps = convertToString($(".sublist_2 input:checked"));
 		var bs = convertToString($(".sublist_3 input:checked"));
+		var pr = convertToString($(".sublist_4 input:checked"));
 		$.ajax({
 			url: "ajax_c/findGuitars",
 			type: "get",
-			data: "manufacturers=" + ms + "&pickups=" + ps + "&bridges=" + bs,
+			data: "manufacturers=" + ms + "&pickups=" + ps + "&bridges=" + bs + "&priceranges=" + pr,
 			success: function(response) {
 				var json_object = eval(response);
 				for (var i = 0; i < json_object.length; i++) {
 					var obj = eval(json_object[i]);
-					alert(obj.manufacturer_name + " " + obj.model_name);
+					alert(obj.manufacturer_name + " " + obj.model_name + " " + obj.price);
 				};
-				// var string = "";
-				// for (var i = 0; i < response.length; i++) {
-					// string += response[i];
-				// }
-				// alert(string);
-				// alert(json_object.join);
-				// alert(response[0] + response[1]);
 				// alert(response);
 			},
 			error: function(xhr, error) {

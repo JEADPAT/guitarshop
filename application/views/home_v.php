@@ -3,42 +3,36 @@
 		<div class="row row-offcanvas row-offcanvas-left">
 
 			<div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
-				<!-- <div class="list-group">
-					<a href="#" class="list-group-item" onclick="toggle_sublist(1)">Manufacturer</a>
-					<select name="manufacturer">
-					<?php foreach ($manufacturers as $m) { ?>
-						<option><a href="#" class="sublist_1 list-group-item"><input type="checkbox" value="<?php echo $m['manufacturer_name']; ?>" onclick="test()">&nbsp;&nbsp;<?php echo $m['manufacturer_name']; ?></a></option>
-					<?php } ?>
-					</select>
-				</div> -->
 				<ul class="custom-list">
 					<li><a href="#" style="margin-left: -10px; font-size: 16px;" onclick="toggle_sublist(1)"><label>Manufacturer</label></a>
 						<ul class="custom-sublist sublist_1" style="list-style: none;">
 							<?php foreach ($manufacturers as $m) { ?>
-								<li><input type="checkbox" name="manufacturer" value="<?php echo $m['manufacturer_name']; ?>" onclick="findGuitars()"><label style="color: #ffffff;">&nbsp;&nbsp;<?php echo $m['manufacturer_name']; ?></label></li>
+								<li><label style="color: #ffffff;"><input type="checkbox" name="manufacturer" value="<?php echo $m['manufacturer_name']; ?>" onclick="findGuitars()">&nbsp;&nbsp;<?php echo $m['manufacturer_name']; ?></label></li>
 							<?php } ?>
 						</ul>
 					</li>
 					<li><a href="#" style="margin-left: -10px; font-size: 16px;" onclick="toggle_sublist(2)"><label>Pickup</label></a>
 						<ul class="custom-sublist sublist_2" style="list-style: none;">
 							<?php foreach ($pickups as $p) { ?>
-								<li><input type="checkbox" name="manufacturer" value="<?php echo $p['pickup_configuration']; ?>" onclick="findGuitars()"><label style="color: #ffffff;">&nbsp;&nbsp;<?php echo $p['pickup_configuration']; ?></label></li>
+								<li><label style="color: #ffffff;"><input type="checkbox" name="manufacturer" value="<?php echo $p['pickup_configuration']; ?>" onclick="findGuitars()">&nbsp;&nbsp;<?php echo $p['pickup_configuration']; ?></label></li>
 							<?php } ?>
 						</ul>
 					</li>
 					<li><a href="#" style="margin-left: -10px; font-size: 16px;" onclick="toggle_sublist(3)"><label>Bridge</label></a>
 						<ul class="custom-sublist sublist_3" style="list-style: none;">
 							<?php foreach ($bridges as $b) { ?>
-								<li><input type="checkbox" name="manufacturer" value="<?php echo $b['bridge_type']; ?>" onclick="findGuitars()"><label style="color: #ffffff;">&nbsp;&nbsp;<?php echo $b['bridge_type']; ?></label></li>
+								<li><label style="color: #ffffff;"><input type="checkbox" name="manufacturer" value="<?php echo $b['bridge_type']; ?>" onclick="findGuitars()">&nbsp;&nbsp;<?php echo $b['bridge_type']; ?></label></li>
 							<?php } ?>
 						</ul>
 					</li>
 					<li><a href="#" style="margin-left: -10px; font-size: 16px;" onclick="toggle_sublist(4)"><label>Price Range</label></a>
 						<ul class="custom-sublist sublist_4" style="list-style: none;">
-							<li><input type="checkbox" name="pricerange" value="" onclick=""><label>&nbsp;&nbsp;฿ 0 - ฿ 9,999</label></li>
-							<li><input type="checkbox" name="pricerange" value="" onclick=""><label>&nbsp;&nbsp;฿ 10,000 - ฿ 19,999</label></li>
-							<li><input type="checkbox" name="pricerange" value="" onclick=""><label>&nbsp;&nbsp;฿ 20,000 - ฿ 29,999</label></li>
-							<li><input type="checkbox" name="pricerange" value="" onclick=""><label>&nbsp;&nbsp;฿ 30,000 - ฿ 39,999</label></li>
+							<li><label style="color: #ffffff;"><input type="checkbox" name="pricerange" value="0-9999" onclick="findGuitars()">&nbsp;&nbsp;฿ 0 - ฿ 9,999</label></li>
+							<li><label style="color: #ffffff;"><input type="checkbox" name="pricerange" value="10000-19999" onclick="findGuitars()">&nbsp;&nbsp;฿ 10,000 - ฿ 19,999</label></li>
+							<li><label style="color: #ffffff;"><input type="checkbox" name="pricerange" value="20000-29999" onclick="findGuitars()">&nbsp;&nbsp;฿ 20,000 - ฿ 29,999</label></li>
+							<li><label style="color: #ffffff;"><input type="checkbox" name="pricerange" value="30000-39999" onclick="findGuitars()">&nbsp;&nbsp;฿ 30,000 - ฿ 39,999</label></li>
+							<li><label style="color: #ffffff;"><input type="checkbox" name="pricerange" value="40000-49999" onclick="findGuitars()">&nbsp;&nbsp;฿ 40,000 - ฿ 49,999</label></li>
+							<li><label style="color: #ffffff;"><input type="checkbox" name="pricerange" value="50000-200000" onclick="findGuitars()">&nbsp;&nbsp;> ฿ 50,000</label></li>
 						</ul>
 					</li>
 				</ul>
