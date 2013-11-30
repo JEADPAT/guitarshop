@@ -19,21 +19,36 @@
                 
                 document.getElementById("guitarBox").innerHTML = "";
                 
-				for (var i = 0; i < json_object.length; i++) {
-					var obj = eval(json_object[i]);
-//					alert(obj.manufacturer_name + " " + obj.model_name);
+                 var t1 = document.getElementById("guitarBox");
+                
+                for (var j = 1; j <= json_object.length/3 + 1; j++) {
                     
-                    var t1 = document.getElementById("guitarBox");
-                    var d =  document.createElement("div");
-                    d.className = "col-6 col-sm-6 col-lg-4";
+//                alert(j);
                     
-                    d.innerHTML = "<h2>"+obj.manufacturer_name+"</h2>"+"<h5>"+obj.model_name+"</h5>"+"<img data-src=\""+"holder.js/100%x180\""+" "+"alt="+"\"PICTURE\""+"<br>"+"<p><a class="+"\"btn btn-default\" "+"href="+" \" # \" "+"role="+" \"button \" >"+"View Detail >>"+"</a></p>";
-                    
-//                    d.innerHTML = obj.manufacturer_name + " " + obj.model_name;
-                    
-                    t1.appendChild(d);
-                    
-				};
+                    var row_div = document.createElement("div");
+                    row_div.className = "row";
+                
+                    for (var i = (3*j)-3; i < 3*j && i < json_object.length; i++) {
+                        var obj = eval(json_object[i]);
+    //					alert(obj.manufacturer_name + " " + obj.model_name);
+                        
+                       
+                        var d =  document.createElement("div");
+                        d.className = "col-6 col-sm-6 col-lg-4";
+                        
+                          
+                               
+                         d.innerHTML = "<h2>"+obj.manufacturer_name+"</h2>"+"<h5>"+obj.model_name+"<h5>"+"<img data-src=\""+"holder.js/100%x180\""+" "+"alt="+"\"PICTURE\""+">"+"<br>"+"<p><a class="+"\"btn btn-default\" "+"href="+" \" # \" "+"role="+" \"button \" >"+"View Detail >>"+"</a></p>";
+                                
+                        
+    //                    d.innerHTML = obj.manufacturer_name + " " + obj.model_name;
+                        
+                        row_div.appendChild(d);
+                        
+                        
+                    };
+                    t1.appendChild(row_div);
+                };
 				// alert(json_object);
 				// alert(response);
             },
@@ -55,10 +70,24 @@
 			data: "manufacturers=" + ms + "&pickups=" + ps + "&bridges=" + bs + "&priceranges=" + pr,
 			success: function(response) {
 				var json_object = eval(response);
-				for (var i = 0; i < json_object.length; i++) {
-					var obj = eval(json_object[i]);
-					alert(obj.manufacturer_name + " " + obj.model_name + " " + obj.price);
-				};
+//				for (var i = 0; i < json_object.length; i++) {
+//					var obj = eval(json_object[i]);
+//					alert(obj.manufacturer_name + " " + obj.model_name + " " + obj.price);
+//				};
+                document.getElementById("guitarBox").innerHTML = "";
+				var t1 = document.getElementById("guitarBox");
+                for (var j = 1; j <= json_object.length/3 + 1; j++) {
+                    var row_div = document.createElement("div");
+                    row_div.className = "row";
+                    for (var i = (3*j)-3; i < 3*j && i < json_object.length; i++) {
+                        var obj = eval(json_object[i]);
+                        var d =  document.createElement("div");
+                        d.className = "col-6 col-sm-6 col-lg-4";
+						d.innerHTML = "<h2>"+obj.manufacturer_name+"</h2>"+"<h5>"+obj.model_name+"<h5>"+"<img data-src=\""+"holder.js/100%x180\""+" "+"alt="+"\"PICTURE\""+">"+"<br>"+"<p><a class="+"\"btn btn-default\" "+"href="+" \" # \" "+"role="+" \"button \" >"+"View Detail >>"+"</a></p>";
+                        row_div.appendChild(d);
+                    };
+                    t1.appendChild(row_div);
+                };
 				// alert(response);
 			},
 			error: function(xhr, error) {
