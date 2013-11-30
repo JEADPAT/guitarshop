@@ -41,5 +41,7 @@
 $route['default_controller'] = "home_c";
 $route['404_override'] = '';
 
+$route['about'] = "home_c/about";
+
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */
