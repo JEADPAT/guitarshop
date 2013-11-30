@@ -13,7 +13,7 @@ guitarshop
     
 #### navbar
 
-* move nav collapse to right
+* ~~move nav collapse to right~~
 
 #### guitar models panel
 
