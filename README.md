@@ -18,12 +18,12 @@ guitarshop
 #### guitar models panel
 
 * add sort module
-	* sort by model name A-Z, Z-A
-    * sort by price lowest first, highest first
+    * ~~sort by model name A-Z, Z-A~~
+    * ~~sort by price lowest first, highest first~~
     
 #### etc
 
-* rotate pictures
+* ~~rotate pictures~~
 * ~~add footer~~
 * change theme color
 * **PRESENTATION SCRIPT !!!**
