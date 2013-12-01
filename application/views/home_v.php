@@ -11,17 +11,38 @@
 							<?php } ?>
 						</ul>
 					</li>
+					<li><a href="#" style="margin-left: -10px; font-size: 16px;" onclick="toggle_sublist(3)"><label>Bridge</label></a>
+						<ul class="custom-sublist sublist_3" style="list-style: none;">
+							<?php foreach ($bridges as $b) { ?>
+								<li><label style="color: #ffffff;"><input type="checkbox" name="bridge" value="<?php echo $b['bridge_type']; ?>" onclick="findGuitars()">&nbsp;&nbsp;<?php echo $b['bridge_type']; ?></label></li>
+							<?php } ?>
+						</ul>
+					</li>
+					<li><a href="#" style="margin-left: -10px; font-size: 16px;" onclick="toggle_sublist(7)"><label>Made In</label></a>
+						<ul class="custom-sublist sublist_7" style="list-style: none;">
+							<?php foreach ($madeins as $madein) { ?>
+								<li><label style="color: #ffffff;"><input type="checkbox" name="madin" value="<?php echo $madein['made_in']; ?>" onclick="findGuitars()">&nbsp;&nbsp;<?php echo $madein['made_in']; ?></label></li>
+							<?php } ?>
+						</ul>
+					</li>
+					<li><a href="#" style="margin-left: -10px; font-size: 16px;" onclick="toggle_sublist(6)"><label>Number of Fret</label></a>
+						<ul class="custom-sublist sublist_6" style="list-style: none;">
+							<?php foreach ($frets as $f) { ?>
+								<li><label style="color: #ffffff;"><input type="checkbox" name="manufacturer" value="<?php echo $f['number_of_fret']; ?>" onclick="findGuitars()">&nbsp;&nbsp;<?php echo $f['number_of_fret']; ?></label></li>
+							<?php } ?>
+						</ul>
+					</li>
+					<li><a href="#" style="margin-left: -10px; font-size: 16px;" onclick="toggle_sublist(5)"><label>Number of String</label></a>
+						<ul class="custom-sublist sublist_5" style="list-style: none;">
+							<?php foreach ($strings as $s) { ?>
+								<li><label style="color: #ffffff;"><input type="checkbox" name="manufacturer" value="<?php echo $s['number_of_string']; ?>" onclick="findGuitars()">&nbsp;&nbsp;<?php echo $s['number_of_string']; ?></label></li>
+							<?php } ?>
+						</ul>
+					</li>
 					<li><a href="#" style="margin-left: -10px; font-size: 16px;" onclick="toggle_sublist(2)"><label>Pickup</label></a>
 						<ul class="custom-sublist sublist_2" style="list-style: none;">
 							<?php foreach ($pickups as $p) { ?>
 								<li><label style="color: #ffffff;"><input type="checkbox" name="manufacturer" value="<?php echo $p['pickup_configuration']; ?>" onclick="findGuitars()">&nbsp;&nbsp;<?php echo $p['pickup_configuration']; ?></label></li>
-							<?php } ?>
-						</ul>
-					</li>
-					<li><a href="#" style="margin-left: -10px; font-size: 16px;" onclick="toggle_sublist(3)"><label>Bridge</label></a>
-						<ul class="custom-sublist sublist_3" style="list-style: none;">
-							<?php foreach ($bridges as $b) { ?>
-								<li><label style="color: #ffffff;"><input type="checkbox" name="manufacturer" value="<?php echo $b['bridge_type']; ?>" onclick="findGuitars()">&nbsp;&nbsp;<?php echo $b['bridge_type']; ?></label></li>
 							<?php } ?>
 						</ul>
 					</li>
@@ -49,39 +70,21 @@
 					<div class="panel-body" style="margin-left: 20px; margin-right: 20px;">
 						<div class="row" id='guitarBox'>
                            
-                            
-							<div class="col-6 col-sm-6 col-lg-4" >
-								<h2>Heading</h2>
-								<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-								<p><a class="btn btn-default" href="#" role="button">View details »</a></p>
-							</div><!--/span-->
-							<div class="col-6 col-sm-6 col-lg-4">
-								<h2>Heading</h2>
-								<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-								<p><a class="btn btn-default" href="#" role="button">View details »</a></p>
-							</div><!--/span-->
-							<div class="col-6 col-sm-6 col-lg-4">
-								<h2>Heading</h2>
-								<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-								<p><a class="btn btn-default" href="#" role="button">View details »</a></p>
-							</div><!--/span-->
-							<div class="col-6 col-sm-6 col-lg-4">
-								<h2>Heading</h2>
-								<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-								<p><a class="btn btn-default" href="#" role="button">View details »</a></p>
-							</div><!--/span-->
-							<div class="col-6 col-sm-6 col-lg-4">
-								<h2>Heading</h2>
-								<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-								<p><a class="btn btn-default" href="#" role="button">View details »</a></p>
-							</div><!--/span-->
-							<div class="col-6 col-sm-6 col-lg-4">
-								<h2>Heading</h2>
-								<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-								<p><a class="btn btn-default" href="#" role="button">View details »</a></p>
-							</div><!--/span-->
-                            
-                            
+							<?php for ($i = 1; $i < sizeof($guitars)/3 + 1; $i++) { ?>
+								<div class="row">
+									<?php for ($j = (3*$i)-3; $j < 3*$i && $j < sizeof($guitars); $j++) { 
+										$guitar = $guitars[$j];		
+									?>
+										<div class="col-6 col-sm-6 col-lg-4" >
+											<h2><?php echo $guitar['manufacturer_name']; ?></h2>
+											<h5><?php echo $guitar['model_name']; ?></h5>
+											<img src="<?php echo base_url(); ?>assets/images/">
+											<h5>Price ฿ <?php echo $guitar['price']; ?>.0</h5>
+											<p><a class="btn btn-default" href="#" role="button">View details »</a></p>
+										</div>
+									<?php } ?>
+								</div>
+							<?php } ?>
                             
 						</div>
 					</div>
@@ -98,7 +101,7 @@
 		});
 
 		function hide_all_sublist() {
-			for (var i = 1; i <= 4; i++) {
+			for (var i = 1; i <= 7; i++) {
 				$(".sublist_" + i).hide();
 			}
 		}

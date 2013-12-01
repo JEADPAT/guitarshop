@@ -64,10 +64,13 @@
 		var ps = convertToString($(".sublist_2 input:checked"));
 		var bs = convertToString($(".sublist_3 input:checked"));
 		var pr = convertToString($(".sublist_4 input:checked"));
+		var ns = convertToString($(".sublist_5 input:checked"));
+		var nf = convertToString($(".sublist_6 input:checked"));
+		var mi = convertToString($(".sublist_7 input:checked"));
 		$.ajax({
 			url: "ajax_c/findGuitars",
 			type: "get",
-			data: "manufacturers=" + ms + "&pickups=" + ps + "&bridges=" + bs + "&priceranges=" + pr,
+			data: "manufacturers=" + ms + "&pickups=" + ps + "&bridges=" + bs + "&priceranges=" + pr + "&strings=" + ns + "&frets=" + nf + "&madeins=" + mi,
 			success: function(response) {
 				var json_object = eval(response);
 //				for (var i = 0; i < json_object.length; i++) {
