@@ -26,5 +26,6 @@ guitarshop
 * rotate pictures
 * add footer
 * change theme color
+* **PRESENTATION SCRIPT !!!**
 * **REPORT !!!**
     
