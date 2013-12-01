@@ -15,6 +15,11 @@ class Ajax_C extends CI_Controller {
 		echo json_encode($this->dao_m->callBuilder());
 		// echo $this->dao_m->callBuilder();
 	}
+
+	public function findGuitar() {
+		echo json_encode($this->dao_m->queryGuitar());	
+		// echo $this->dao_m->queryGuitar();
+	}
 	
 }
 
