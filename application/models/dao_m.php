@@ -255,12 +255,43 @@ class Dao_M extends CI_Model {
 		}
 
 		if ($whereChecker) {
-			$query = $query . $join . $where;
-			$result = $this->db->query($query);
+			if ($this->input->get("sort_type") == 1) {
+				$query = $query . $join . $where . "ORDER BY mnf.manufacturer_name ASC";
+				$result = $this->db->query($query);
+			}
+			else if ($this->input->get("sort_type") == 2) {
+				$query = $query . $join . $where . "ORDER BY mnf.manufacturer_name DESC";
+				$result = $this->db->query($query);
+			}
+			else if ($this->input->get("sort_type") == 3) {
+				$query = $query . $join . $where . "ORDER BY guitars.price DESC";
+				$result = $this->db->query($query);
+			}
+			else if ($this->input->get("sort_type") == 4) {
+				$query = $query . $join . $where . "ORDER BY guitars.price ASC";
+				$result = $this->db->query($query);
+			}
 			return $result->result_array();
 		}
 		else
 			return null;
+	}
+
+	public function queryGuitar() {
+		$id = $this->input->get("id");
+		$query = 	"SELECT model_name, number_of_string, made_in, manufacturer_name, price, neck_shape, bridge_type, pickup_configuration, body_shape, bridge_type, number_of_fret, nw.wood_name as neck_wood_name, fw.wood_name as fretboard_wood_name, bw.wood_name as body_wood_name FROM guitars
+					 JOIN necks as n ON n.neck_id = guitars.neck_id
+					 JOIN bridges as b ON b.bridge_id = guitars.bridge_id
+					 JOIN pickups as p ON p.pickup_id = guitars.pickup_id
+					 JOIN manufacturers as m on m.manufacturer_id = guitars.manufacturer_id
+					 JOIN bodies as bd ON bd.body_id = guitars.body_id
+					 JOIN fretboards as f ON f.fretboard_id = n.fretboard_id
+					 JOIN woods as nw ON nw.wood_id = n.wood_id
+					 JOIN woods as bw ON bw.wood_id = bd.wood_id
+					 JOIN woods as fw ON fw.wood_id = f.wood_id
+					 WHERE guitar_id = " . $id;
+		$result = $this->db->query($query);
+		return $result->result_array();
 	}
 
 }
