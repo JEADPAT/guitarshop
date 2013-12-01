@@ -98,7 +98,7 @@
 										<div class="col-6 col-sm-6 col-lg-4" >
 											<h2><?php echo $guitar['manufacturer_name']; ?></h2>
 											<h5><?php echo $guitar['model_name']; ?></h5>
-											<img src="<?php echo base_url(); ?>assets/images/<?php echo $guitar['model_name']; ?>.jpg" style="width: 237px;">
+											<img src="<?php echo base_url(); ?>assets/images/<?php echo $guitar['model_name']; ?>.jpg" style="text-align:center">
 											<h5>Price ฿ <?php echo $guitar['price']; ?>.0</h5>
 											<p><a class="btn btn-default" href="#" role="button" onclick="showGuitar(<?php echo $guitar['guitar_id']; ?>)">View details »</a></p>
 										</div>

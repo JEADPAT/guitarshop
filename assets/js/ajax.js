@@ -34,7 +34,7 @@
                         d.className = "col-6 col-sm-6 col-lg-4";
 						d.innerHTML = "<h2>"+obj.manufacturer_name+"</h2>"
                         +"<h5>"+obj.model_name+"</h5>"
-                        +"<img src=\"http://localhost/guitarshop/assets/images/"+obj.model_name+".jpg\""+" "+"alt="+"\"PICTURE\""+" style=\"width: 237px; height: 180px;\">"
+                        +"<img src=\"http://localhost/guitarshop/assets/images/"+obj.model_name+".jpg\""+" "+"alt="+"\"PICTURE\""+" style=\"text-align:center\">"
                         +"<h5>Price ฿ " + obj.price + "</h5>"
                         +"<p><a class="+"\"btn btn-default\" "+"href="+" \" # \" "+"role="+" \"button \" onclick=\"showGuitar(" + obj.guitar_id + ")\" >"+"View Detail >>"+"</a></p>";
                         row_div.appendChild(d);
@@ -72,7 +72,7 @@
 				+"<h3>&nbsp;&nbsp;&nbsp;&nbsp;"+obj.model_name+"<h3>"
 				+"<div class=\"row\">"
 					+"<div class=\"col-sm-7\">"
-					+"<img src=\"http://localhost/guitarshop/assets/images/" + obj.model_name + ".jpg\" style=\"width: 400px;\">"
+					+"<img src=\"http://localhost/guitarshop/assets/images/" + obj.model_name + ".jpg\" style=\"height: 400px;\">"
 					+"</div>"
 					+"<div id=\"guitar_information\" class=\"col-sm-5\">"
 					+"<p>Body Shape : " + obj.body_shape + "</p>"
@@ -87,7 +87,7 @@
 					+"<p>Price : ฿ " + obj.price + "</p>"
 					+"</div>"
 				+"</div>"
-				+"<button class=\"btn btn-lg btn-danger\"type=\"button\" onclick=\"findGuitars(1)\">Back</button>";
+				+"<br>"+"<button class=\"btn btn-lg btn-danger\"type=\"button\" onclick=\"findGuitars(1)\">Back</button>";
 				// <img src=\"http://localhost/guitarshop/assets/images/" + obj.model_name + ".jpg\">
 				// +"<img src=\"http://localhost/guitarshop/assets/images/"+obj.model_name+".jpg\""+" "+"alt="+"\"PICTURE\""+" style=\"width: 237px; height: 180px;\">"
 				// +"<p><a class="+"\"btn btn-default\" "+"href="+" \" # \" "+"role="+" \"button \" >"+"View Detail >>"+"</a></p>";
