@@ -86,7 +86,11 @@
                         var obj = eval(json_object[i]);
                         var d =  document.createElement("div");
                         d.className = "col-6 col-sm-6 col-lg-4";
-						d.innerHTML = "<h2>"+obj.manufacturer_name+"</h2>"+"<h5>"+obj.model_name+"<h5>"+"<img data-src=\""+"holder.js/100%x180\""+" "+"alt="+"\"PICTURE\""+">"+"<br>"+"<p><a class="+"\"btn btn-default\" "+"href="+" \" # \" "+"role="+" \"button \" >"+"View Detail >>"+"</a></p>";
+						d.innerHTML = "<h2>"+obj.manufacturer_name+"</h2>"
+                        +"<h5>"+obj.model_name+"<h5>"
+                        +"<img src=\"http://localhost/guitarshop/assets/images/"+obj.model_name+".jpg\""+" "+"alt="+"\"PICTURE\""+" style=\"width: 237px; height: 180px;\">"
+                        
+                        +"<p><a class="+"\"btn btn-default\" "+"href="+" \" # \" "+"role="+" \"button \" >"+"View Detail >>"+"</a></p>";
                         row_div.appendChild(d);
                     };
                     t1.appendChild(row_div);
