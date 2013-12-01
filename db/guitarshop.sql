@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Nov 29, 2013 at 09:52 PM
+-- Generation Time: Dec 01, 2013 at 01:16 PM
 -- Server version: 5.5.31
 -- PHP Version: 5.4.19
 
@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS `bodies` (
   `wood_id` int(11) NOT NULL,
   PRIMARY KEY (`body_id`,`wood_id`),
   KEY `fk_bodies_woods1_idx` (`wood_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=57 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=30 ;
 
 --
 -- Dumping data for table `bodies`
@@ -104,7 +104,7 @@ CREATE TABLE IF NOT EXISTS `fretboards` (
   `wood_id` int(11) NOT NULL,
   PRIMARY KEY (`fretboard_id`,`wood_id`),
   KEY `fk_fretboards_woods1_idx` (`wood_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=17 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=15 ;
 
 --
 -- Dumping data for table `fretboards`
@@ -149,17 +149,17 @@ CREATE TABLE IF NOT EXISTS `guitars` (
   KEY `fk_guitars_pickups1_idx` (`pickup_id`),
   KEY `fk_guitars_manufacturers1_idx` (`manufacturer_id`),
   KEY `fk_guitars_bodies1_idx` (`body_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=107 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=28 ;
 
 --
 -- Dumping data for table `guitars`
 --
 
 INSERT INTO `guitars` (`guitar_id`, `model_name`, `number_of_string`, `made_in`, `neck_id`, `bridge_id`, `pickup_id`, `manufacturer_id`, `body_id`, `price`) VALUES
-(1, 'Standard Stratocaster', 6, 'Mexico', 1, 1, 2, 1, 18, 18900),
+(1, 'Standard Stratocaster Mexico', 6, 'Mexico', 1, 1, 2, 1, 18, 18900),
 (2, 'Standard Telecaster', 6, 'Japan', 15, 1, 2, 1, 24, 20400),
-(3, 'Standard Stratocaster', 6, 'USA', 9, 1, 2, 1, 23, 30000),
-(4, 'Standard Stratocaster', 6, 'Korea', 13, 1, 2, 6, 23, 80900),
+(3, 'Standard Stratocaster USA', 6, 'USA', 9, 1, 2, 1, 23, 30000),
+(4, 'Standard Stratocaster Korea', 6, 'Korea', 13, 1, 2, 6, 23, 80900),
 (5, 'Les Paul Signature T', 6, 'USA', 5, 2, 4, 2, 28, 16000),
 (6, 'Les Paul Standard Gary Moore Tribute Lemon Burst', 6, 'USA', 6, 2, 4, 2, 27, 54000),
 (7, 'Les Paul Zoot Suit Rainbow', 6, 'Japan', 10, 2, 4, 2, 28, 45000),
@@ -329,8 +329,8 @@ ALTER TABLE `guitars`
 -- Constraints for table `necks`
 --
 ALTER TABLE `necks`
-  ADD CONSTRAINT `fk_necks_woods1` FOREIGN KEY (`wood_id`) REFERENCES `woods` (`wood_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_necks_fretboards1` FOREIGN KEY (`fretboard_id`) REFERENCES `fretboards` (`fretboard_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_necks_fretboards1` FOREIGN KEY (`fretboard_id`) REFERENCES `fretboards` (`fretboard_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_necks_woods1` FOREIGN KEY (`wood_id`) REFERENCES `woods` (`wood_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
