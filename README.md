@@ -7,9 +7,9 @@ guitarshop
 #### sidebar
 
 * add
-	* number of string
-    * number of fret
-    * made in
+    * ~~number of string~~
+    * ~~number of fret~~
+    * ~~made in~~
     
 #### navbar
 
