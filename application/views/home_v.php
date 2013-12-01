@@ -45,7 +45,30 @@
 					print_r($split);
 				?> -->
 				<div class="panel panel-default custom-panel">
-					<div class="panel-heading"><h3>Guitar Models</h3></h3></div>
+					<div class="panel-heading">
+                        <div class="row">
+                        	<div class="col-sm-10">
+                        <h3>Guitar Models</h3>
+                            </div>
+                            
+                        	<div class="col-sm-2">
+                                <h3>
+                        	<div class="btn-group">
+                  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" style="width:100px;margin-left:10px"><strong>Sort By </strong><span class="caret"></span>
+                          </button>
+                          <ul class="dropdown-menu" role="menu">
+                              
+                            <li><a href="#">Model name A-Z</a></li>
+                            <li><a href="#">Model name Z-A</a></li>
+                            <li><a href="#">Price Lowest-Highest</a></li>
+                            <li><a href="#">Price Highest-Lowest</a></li>
+                            
+                          </ul>
+                        </div>
+                                    </h3>
+                        	</div>
+                        </div>
+                	</div>
 					<div class="panel-body" style="margin-left: 20px; margin-right: 20px;">
 						<div class="row" id='guitarBox'>
                            
