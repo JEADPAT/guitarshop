@@ -30,7 +30,7 @@
 				</div>
 				<div class="navbar-collapse collapse">
 					<ul id="ul-custom" class="nav navbar-nav">
-						<li><a href="#" style="color: #ffffff;">Home</a></li>
+                        <li><a href="#" style="color: #ffffff;">Home</a></li>
 						<li><a href="#about" style="color: #ffffff;">About</a></li>
 						<li><a href="#contact" style="color: #ffffff;">Contact</a></li>
 						<!-- <li class="dropdown">
@@ -47,7 +47,7 @@
 						</li> -->
 					</ul>
 					<ul id="ul-custom" class="nav navbar-nav navbar-right">
-						<li><a href="./" style="color: #ffffff;">Fixed top</a></li>
+                        <li><a href="./" style="color: #ffffff;">Fixed top</a></li>
 					</ul>
 				</div><!--/.nav-collapse -->
 			</div>
