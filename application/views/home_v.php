@@ -14,7 +14,28 @@
 					<li><a href="#" style="margin-left: -10px; font-size: 16px;" onclick="toggle_sublist(3)"><label>Bridge</label></a>
 						<ul class="custom-sublist sublist_3" style="list-style: none;">
 							<?php foreach ($bridges as $b) { ?>
-								<li><label style="color: #ffffff;"><input type="checkbox" name="manufacturer" value="<?php echo $b['bridge_type']; ?>" onclick="findGuitars()">&nbsp;&nbsp;<?php echo $b['bridge_type']; ?></label></li>
+								<li><label style="color: #ffffff;"><input type="checkbox" name="bridge" value="<?php echo $b['bridge_type']; ?>" onclick="findGuitars()">&nbsp;&nbsp;<?php echo $b['bridge_type']; ?></label></li>
+							<?php } ?>
+						</ul>
+					</li>
+					<li><a href="#" style="margin-left: -10px; font-size: 16px;" onclick="toggle_sublist(7)"><label>Made In</label></a>
+						<ul class="custom-sublist sublist_7" style="list-style: none;">
+							<?php foreach ($madeins as $madein) { ?>
+								<li><label style="color: #ffffff;"><input type="checkbox" name="madin" value="<?php echo $madein['made_in']; ?>" onclick="findGuitars()">&nbsp;&nbsp;<?php echo $madein['made_in']; ?></label></li>
+							<?php } ?>
+						</ul>
+					</li>
+					<li><a href="#" style="margin-left: -10px; font-size: 16px;" onclick="toggle_sublist(6)"><label>Number of Fret</label></a>
+						<ul class="custom-sublist sublist_6" style="list-style: none;">
+							<?php foreach ($frets as $f) { ?>
+								<li><label style="color: #ffffff;"><input type="checkbox" name="manufacturer" value="<?php echo $f['number_of_fret']; ?>" onclick="findGuitars()">&nbsp;&nbsp;<?php echo $f['number_of_fret']; ?></label></li>
+							<?php } ?>
+						</ul>
+					</li>
+					<li><a href="#" style="margin-left: -10px; font-size: 16px;" onclick="toggle_sublist(5)"><label>Number of String</label></a>
+						<ul class="custom-sublist sublist_5" style="list-style: none;">
+							<?php foreach ($strings as $s) { ?>
+								<li><label style="color: #ffffff;"><input type="checkbox" name="manufacturer" value="<?php echo $s['number_of_string']; ?>" onclick="findGuitars()">&nbsp;&nbsp;<?php echo $s['number_of_string']; ?></label></li>
 							<?php } ?>
 						</ul>
 					</li>
@@ -80,7 +101,7 @@
 		});
 
 		function hide_all_sublist() {
-			for (var i = 1; i <= 4; i++) {
+			for (var i = 1; i <= 7; i++) {
 				$(".sublist_" + i).hide();
 			}
 		}
