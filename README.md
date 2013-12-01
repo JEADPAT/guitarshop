@@ -24,7 +24,7 @@ guitarshop
 #### etc
 
 * rotate pictures
-* add footer
+* ~~add footer~~
 * change theme color
 * **PRESENTATION SCRIPT !!!**
 * **REPORT !!!**
