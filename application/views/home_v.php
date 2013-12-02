@@ -1,5 +1,12 @@
 
+	
 	<div class="container" style="padding-bottom: 15px;">
+
+		<div class="jumbotron" style="color: #640F7F">
+		<h2>Realtime Query</h2>
+			<p id="realtime">This Jumbotron will show you a query that use to find a guitar in out guitar shop !</p>
+		</div>
+
 		<div class="row row-offcanvas row-offcanvas-left">
 
 			<div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
@@ -69,17 +76,17 @@
 					<div class="panel-heading">
                         <div class="row">
                         	<div class="col-sm-10">
-	                        	<h3>Guitar Models</h3>
+	                        	<h3 style="margin-left: 20px;">Guitar Models</h3>
                             </div>
                         	<div class="col-sm-2">
                                 <h3>
                                 	<div class="btn-group">
-                                		<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" style="width:100px;">
+                                		<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" style="width:100px; margin-top: -10px;">
                                 			<strong>Sort By </strong><span class="caret"></span>
                                 		</button>
                                 		<ul class="dropdown-menu" role="menu">
-                                			<li><a href="#" onclick="findGuitars(1)">Model Name A-Z</a></li>
-                                			<li><a href="#" onclick="findGuitars(2)">Model Name Z-A</a></li>
+                                			<li><a href="#" onclick="findGuitars(1)">Manufacturer Name A-Z</a></li>
+                                			<li><a href="#" onclick="findGuitars(2)">Manufacturer Name Z-A</a></li>
                                 			<li><a href="#" onclick="findGuitars(3)">Highest Price First</a></li>
                                 			<li><a href="#" onclick="findGuitars(4)">Lowest Price First</a></li>
                                 		</ul>
@@ -95,12 +102,12 @@
 									<?php for ($j = (3*$i)-3; $j < 3*$i && $j < sizeof($guitars); $j++) { 
 										$guitar = $guitars[$j];		
 									?>
-										<div class="col-6 col-sm-6 col-lg-4" >
+										<div class="col-6 col-sm-6 col-lg-4" style="text-align: center;">
 											<h2><?php echo $guitar['manufacturer_name']; ?></h2>
 											<h5><?php echo $guitar['model_name']; ?></h5>
-											<img src="<?php echo base_url(); ?>assets/images/<?php echo $guitar['model_name']; ?>.jpg" style="text-align:center">
-											<h5>Price ฿ <?php echo $guitar['price']; ?>.0</h5>
-											<p><a class="btn btn-default" href="#" role="button" onclick="showGuitar(<?php echo $guitar['guitar_id']; ?>)">View details »</a></p>
+											<img src="<?php echo base_url(); ?>assets/images/<?php echo $guitar['model_name']; ?>.jpg" style="">
+											<h5 style="text-align: center;">Price ฿ <?php echo $guitar['price']; ?>.0</h5>
+											<p style="text-align: center"><a class="btn btn-default" href="#" role="button" onclick="showGuitar(<?php echo $guitar['guitar_id']; ?>)">View details »</a></p>
 										</div>
 									<?php } ?>
 								</div>

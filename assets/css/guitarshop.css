@@ -5,22 +5,22 @@
 	}
 
 	#custom-navbar {
-		background-color: #2ECC71;
+		background-color: #611474;
 	}
 
 	.custom-panel {
-		/*color: #3a87ad;*/
-		border-color: #E74C3C;
+		color: #640F7F;
+		border-color: #8E44AD;
 	}
 
 	.custom-panel > .panel-heading {
 		color: #ffffff;
-		background-color: #E74C3C;
-		border-color: #E74C3C;
+		background-color: #8E44AD;
+		border-color: #8E44AD;
 	}
 
 	.custom-list {
-		background-color: #F1C40F;
+		background-color: #8E44AD;
 		padding-top: 20px;
 		padding-bottom: 20px;
 		border-radius: 5px;
@@ -44,3 +44,9 @@
 		font-size: 18px;
 		font-weight: normal;
 	}
+
+	#aboutus {
+		text-align: center;
+		background-color: transparent;
+	}
+

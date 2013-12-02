@@ -272,6 +272,10 @@ class Dao_M extends CI_Model {
 				$result = $this->db->query($query);
 			}
 			return $result->result_array();
+			// return array(
+			// 	'result' => $result->result_array(),
+			// 	'query' => $query
+			// );
 		}
 		else
 			return null;
@@ -292,6 +296,135 @@ class Dao_M extends CI_Model {
 					 WHERE guitar_id = " . $id;
 		$result = $this->db->query($query);
 		return $result->result_array();
+	}
+
+
+	/* --------------------------realtime query------------------------------ */
+	public function getQuery() {
+		$bridge = null;
+		$madein = null;
+		$manufacturer = null;
+		$number_of_fret = null;
+		$number_of_string = null;
+		$pickup = null;
+		$price = null;
+
+		if (!$this->input->get("manufacturers") == "") {
+			$manufacturer = $this->buildManufacturer();
+		}
+
+		if (!$this->input->get("pickups") == "") {
+			$pickup = $this->buildPickup();
+		}
+
+		if (!$this->input->get("bridges") == "") {
+			$bridge = $this->buildBridge();
+		}
+
+		if (!$this->input->get("priceranges") == "") {
+			$price = $this->buildPriceRange();
+		}
+
+		if (!$this->input->get("madeins") == "") {
+			$madein = $this->buildMadeIn();
+		}
+
+		if (!$this->input->get("frets") == "") {
+			$number_of_fret = $this->buildFret();
+		}
+
+		if (!$this->input->get("strings") == "") {
+			$number_of_string = $this->buildString();
+		}
+
+		return $this->makeQuery($manufacturer, $bridge, $pickup, $price, $madein, $number_of_fret, $number_of_string);
+	}
+
+	public function makeQuery($manufactuerer, $bridge, $pickup, $price, $madein, $number_of_fret, $number_of_string) {
+		$query = "SELECT * FROM guitars ";
+		$join  = "<br>JOIN manufacturers as mnf ON mnf.manufacturer_id = guitars.manufacturer_id";
+		$where = "<br>WHERE ";
+		$whereChecker = false;
+
+		if (!empty($manufactuerer)) {
+			// $join = $join . $manufactuerer['join'];
+			$where = $where . $manufactuerer['where'];
+			$whereChecker = true;
+		}
+
+		if (!empty($bridge)) {
+			$join = $join . $bridge['join'];
+			if ($whereChecker)
+				$where = $where . "<br>AND " . $bridge['where'];
+			else
+				$where = $where . $bridge['where'];	
+			$whereChecker = true;
+		}
+
+		if (!empty($pickup)) {
+			$join = $join . $pickup['join'];
+			if ($whereChecker)
+				$where = $where . "<br>AND " . $pickup['where'];
+			else
+				$where = $where . $pickup['where'];
+			$whereChecker = true;
+		}
+
+		if (!empty($price)) {
+			if ($whereChecker)
+				$where = $where . "<br>AND " . $price['where'];
+			else
+				$where = $where . $price['where'];
+			$whereChecker = true;
+		}
+
+		if (!empty($madein)) {
+			if ($whereChecker)
+				$where = $where . "<br>AND " . $madein['where'];
+			else
+				$where = $where . $madein['where'];
+			$whereChecker = true;
+		}
+
+		if (!empty($number_of_fret)) {
+			$join = $join . $number_of_fret['join'];
+			if ($whereChecker)
+				$where = $where . "<br>AND " . $number_of_fret['where'];
+			else
+				$where = $where . $number_of_fret['where'];
+			$whereChecker = true;
+		}
+
+		if (!empty($number_of_string)) {
+			if ($whereChecker)
+				$where = $where . "<br>AND " . $number_of_string['where'];
+			else
+				$where = $where . $number_of_string['where'];
+			$whereChecker = true;
+		}
+
+		if ($whereChecker) {
+			if ($this->input->get("sort_type") == 1) {
+				$query = $query . $join . $where . "<br>ORDER BY mnf.manufacturer_name ASC";
+				// $result = $this->db->query($query);
+			}
+			else if ($this->input->get("sort_type") == 2) {
+				$query = $query . $join . $where . "<br>ORDER BY mnf.manufacturer_name DESC";
+				// $result = $this->db->query($query);
+			}
+			else if ($this->input->get("sort_type") == 3) {
+				$query = $query . $join . $where . "<br>ORDER BY guitars.price DESC";
+				// $result = $this->db->query($query);
+			}
+			else if ($this->input->get("sort_type") == 4) {
+				$query = $query . $join . $where . "<br>ORDER BY guitars.price ASC";
+				// $result = $this->db->query($query);
+			}
+			str_replace("\n", "<br>", $query);
+			return $query;
+		}
+		else
+			return null;
 	}
 
 }
