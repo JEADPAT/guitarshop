@@ -121,6 +121,20 @@
                 alert(xhr.responseText + error.Message);
 			}
 		});
+
+		$.ajax({
+			url: "ajax_c/getQueryGuitar",
+			type: "get",
+			data: "id=" + id,
+			success: function(response) {
+				if (response != "")
+					$("#realtime").html(response);
+				// alert(response);
+			},
+			error: function(xhr, error) {
+                alert(xhr.responseText + error.Message);
+			}
+		});
 	}
 
 	function convertToString(input) {

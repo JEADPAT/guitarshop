@@ -192,7 +192,7 @@ class Dao_M extends CI_Model {
 
 	/* ---------------------------final query------------------------------ */
 	public function masterQuery($manufactuerer, $bridge, $pickup, $price, $madein, $number_of_fret, $number_of_string) {
-		$query = "SELECT * FROM guitars ";
+		$query = "SELECT guitar_id, model_name, mnf.manufacturer_name, price FROM guitars ";
 		$join  = "JOIN manufacturers as mnf ON mnf.manufacturer_id = guitars.manufacturer_id\n";
 		$where = "WHERE ";
 		$whereChecker = false;
@@ -300,6 +300,23 @@ class Dao_M extends CI_Model {
 
 
 	/* --------------------------realtime query------------------------------ */
+	public function getQueryGuitar() {
+		$id = $this->input->get("id");
+		$query = 	"SELECT model_name, number_of_string, made_in, manufacturer_name, price, neck_shape, bridge_type, pickup_configuration, body_shape, bridge_type, number_of_fret, nw.wood_name as neck_wood_name, fw.wood_name as fretboard_wood_name, bw.wood_name as body_wood_name<br>
+					 FROM guitars<br>
+					 JOIN necks as n ON n.neck_id = guitars.neck_id<br>
+					 JOIN bridges as b ON b.bridge_id = guitars.bridge_id<br>
+					 JOIN pickups as p ON p.pickup_id = guitars.pickup_id<br>
+					 JOIN manufacturers as m on m.manufacturer_id = guitars.manufacturer_id<br>
+					 JOIN bodies as bd ON bd.body_id = guitars.body_id<br>
+					 JOIN fretboards as f ON f.fretboard_id = n.fretboard_id<br>
+					 JOIN woods as nw ON nw.wood_id = n.wood_id<br>
+					 JOIN woods as bw ON bw.wood_id = bd.wood_id<br>
+					 JOIN woods as fw ON fw.wood_id = f.wood_id<br>
+					 WHERE guitar_id = " . $id ."<br>";
+		return $query;
+	}
+
 	public function getQuery() {
 		$bridge = null;
 		$madein = null;
@@ -341,7 +358,7 @@ class Dao_M extends CI_Model {
 	}
 
 	public function makeQuery($manufactuerer, $bridge, $pickup, $price, $madein, $number_of_fret, $number_of_string) {
-		$query = "SELECT * FROM guitars ";
+		$query = "SELECT guitar_id, model_name, mnf.manufacturer_name, price FROM guitars ";
 		$join  = "<br>JOIN manufacturers as mnf ON mnf.manufacturer_id = guitars.manufacturer_id";
 		$where = "<br>WHERE ";
 		$whereChecker = false;

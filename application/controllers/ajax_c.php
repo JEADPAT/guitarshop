@@ -24,6 +24,10 @@ class Ajax_C extends CI_Controller {
 	public function getQuery() {
 		echo $this->dao_m->getQuery();
 	}
+
+	public function getQueryGuitar() {
+		echo $this->dao_m->getQueryGuitar();
+	}
 	
 }
 
