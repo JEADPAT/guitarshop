@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Dec 01, 2013 at 01:16 PM
+-- Generation Time: Dec 10, 2013 at 08:23 PM
 -- Server version: 5.5.31
 -- PHP Version: 5.4.19
 
@@ -29,12 +29,12 @@ USE `guitarshop`;
 --
 
 CREATE TABLE IF NOT EXISTS `bodies` (
-  `body_id` int(11) NOT NULL AUTO_INCREMENT,
-  `body_shape` varchar(255) DEFAULT NULL,
+  `body_id` int(3) NOT NULL,
+  `body_shape` varchar(50) DEFAULT NULL,
   `wood_id` int(11) NOT NULL,
   PRIMARY KEY (`body_id`,`wood_id`),
   KEY `fk_bodies_woods1_idx` (`wood_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=30 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `bodies`
@@ -78,10 +78,10 @@ INSERT INTO `bodies` (`body_id`, `body_shape`, `wood_id`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `bridges` (
-  `bridge_id` int(11) NOT NULL AUTO_INCREMENT,
-  `bridge_type` varchar(255) DEFAULT NULL,
+  `bridge_id` int(3) NOT NULL,
+  `bridge_type` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`bridge_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `bridges`
@@ -99,12 +99,12 @@ INSERT INTO `bridges` (`bridge_id`, `bridge_type`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `fretboards` (
-  `fretboard_id` int(11) NOT NULL AUTO_INCREMENT,
-  `number_of_fret` int(11) DEFAULT NULL,
-  `wood_id` int(11) NOT NULL,
+  `fretboard_id` int(3) NOT NULL,
+  `number_of_fret` int(3) DEFAULT NULL,
+  `wood_id` int(3) NOT NULL,
   PRIMARY KEY (`fretboard_id`,`wood_id`),
   KEY `fk_fretboards_woods1_idx` (`wood_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=15 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `fretboards`
@@ -133,15 +133,15 @@ INSERT INTO `fretboards` (`fretboard_id`, `number_of_fret`, `wood_id`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `guitars` (
-  `guitar_id` int(11) NOT NULL AUTO_INCREMENT,
-  `model_name` varchar(255) DEFAULT NULL,
-  `number_of_string` int(11) DEFAULT NULL,
-  `made_in` varchar(255) DEFAULT NULL,
-  `neck_id` int(11) NOT NULL,
-  `bridge_id` int(11) NOT NULL,
-  `pickup_id` int(11) NOT NULL,
-  `manufacturer_id` int(11) NOT NULL,
-  `body_id` int(11) NOT NULL,
+  `guitar_id` int(5) NOT NULL,
+  `model_name` varchar(200) DEFAULT NULL,
+  `number_of_string` int(3) DEFAULT NULL,
+  `made_in` varchar(50) DEFAULT NULL,
+  `neck_id` int(3) NOT NULL,
+  `bridge_id` int(3) NOT NULL,
+  `pickup_id` int(3) NOT NULL,
+  `manufacturer_id` int(3) NOT NULL,
+  `body_id` int(3) NOT NULL,
   `price` double DEFAULT NULL,
   PRIMARY KEY (`guitar_id`,`neck_id`,`bridge_id`,`pickup_id`,`manufacturer_id`,`body_id`),
   KEY `fk_guitars_necks1_idx` (`neck_id`),
@@ -149,7 +149,7 @@ CREATE TABLE IF NOT EXISTS `guitars` (
   KEY `fk_guitars_pickups1_idx` (`pickup_id`),
   KEY `fk_guitars_manufacturers1_idx` (`manufacturer_id`),
   KEY `fk_guitars_bodies1_idx` (`body_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=28 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `guitars`
@@ -191,10 +191,10 @@ INSERT INTO `guitars` (`guitar_id`, `model_name`, `number_of_string`, `made_in`,
 --
 
 CREATE TABLE IF NOT EXISTS `manufacturers` (
-  `manufacturer_id` int(11) NOT NULL AUTO_INCREMENT,
-  `manufacturer_name` varchar(255) DEFAULT NULL,
+  `manufacturer_id` int(3) NOT NULL,
+  `manufacturer_name` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`manufacturer_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `manufacturers`
@@ -216,10 +216,10 @@ INSERT INTO `manufacturers` (`manufacturer_id`, `manufacturer_name`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `necks` (
-  `neck_id` int(11) NOT NULL,
-  `neck_shape` varchar(255) DEFAULT NULL,
-  `wood_id` int(11) NOT NULL,
-  `fretboard_id` int(11) NOT NULL,
+  `neck_id` int(3) NOT NULL,
+  `neck_shape` varchar(50) DEFAULT NULL,
+  `wood_id` int(3) NOT NULL,
+  `fretboard_id` int(3) NOT NULL,
   PRIMARY KEY (`neck_id`,`wood_id`,`fretboard_id`),
   KEY `fk_necks_woods1_idx` (`wood_id`),
   KEY `fk_necks_fretboards1_idx` (`fretboard_id`)
@@ -258,10 +258,10 @@ INSERT INTO `necks` (`neck_id`, `neck_shape`, `wood_id`, `fretboard_id`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `pickups` (
-  `pickup_id` int(11) NOT NULL AUTO_INCREMENT,
-  `pickup_configuration` varchar(45) DEFAULT NULL,
+  `pickup_id` int(3) NOT NULL,
+  `pickup_configuration` varchar(10) DEFAULT NULL,
   PRIMARY KEY (`pickup_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `pickups`
@@ -281,10 +281,10 @@ INSERT INTO `pickups` (`pickup_id`, `pickup_configuration`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `woods` (
-  `wood_id` int(11) NOT NULL AUTO_INCREMENT,
-  `wood_name` varchar(255) DEFAULT NULL,
+  `wood_id` int(3) NOT NULL,
+  `wood_name` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`wood_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `woods`
