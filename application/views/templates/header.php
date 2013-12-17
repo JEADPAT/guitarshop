@@ -32,8 +32,8 @@
 					<ul id="ul-custom" class="nav navbar-nav">
 					</ul>
 					<ul id="ul-custom" class="nav navbar-nav navbar-right">
-						<li><a href="#" style="color: #ffffff;">Home</a></li>
-						<li><a href="#about" style="color: #ffffff;">About</a></li>
+						<li><a href="<?php echo base_url(); ?>" style="color: #ffffff;">Home</a></li>
+						<li><a href="<?php echo base_url(); ?>about" style="color: #ffffff;">About</a></li>
 					</ul>
 				</div><!--/.nav-collapse -->
 			</div>
