@@ -359,8 +359,8 @@ class Dao_M extends CI_Model {
 
 	public function makeQuery($manufactuerer, $bridge, $pickup, $price, $madein, $number_of_fret, $number_of_string) {
 		$query = "SELECT guitar_id, model_name, mnf.manufacturer_name, price FROM guitars ";
-		$join  = "<br>JOIN manufacturers as mnf ON mnf.manufacturer_id = guitars.manufacturer_id";
-		$where = "<br>WHERE ";
+		$join  = "<br>JOIN manufacturers as mnf ON mnf.manufacturer_id = guitars.manufacturer_id<br>";
+		$where = "WHERE ";
 		$whereChecker = false;
 
 		if (!empty($manufactuerer)) {
@@ -437,7 +437,7 @@ class Dao_M extends CI_Model {
 				$query = $query . $join . $where . "<br>ORDER BY guitars.price ASC";
 				// $result = $this->db->query($query);
 			}
-			str_replace("\n", "<br>", $query);
+			$query = str_replace("\n", "<br>", $query);
 			return $query;
 		}
 		else
